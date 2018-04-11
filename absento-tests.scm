@@ -59,20 +59,20 @@
       ;(== q `(,a . ,b))))
   ;'(((_.0 . _.1) (=/= ((_.0 3) (_.1 4))) (absento ((3 . 4) _.0) ((3 . 4) _.1)))))
 
-(test "test 8"
-  (run* (q)
-    (fresh (a b)
-      (absento 5 a)
-      (symbolo b)
-      (== `(,q ,b) a)))
-  '((_.0 (absento (5 _.0)))))
+;; (test "test 8"
+;;   (run* (q)
+;;     (fresh (a b)
+;;       (absento 5 a)
+;;       (symbolo b)
+;;       (== `(,q ,b) a)))
+;;   '((_.0 (absento (5 _.0)))))
 
-(test "test 9"
-  (run* (q)
-    (fresh (a b)
-      (absento 5 a)
-      (== `(,q ,b) a)))
-  '((_.0 (absento (5 _.0)))))
+;; (test "test 9"
+;;   (run* (q)
+;;     (fresh (a b)
+;;       (absento 5 a)
+;;       (== `(,q ,b) a)))
+;;   '((_.0 (absento (5 _.0)))))
 
 ;(test "test 10"
   ;(run* (q) (fresh (a) (absento `(3 . ,a) q) (absento q `(3 . ,a))))
@@ -131,17 +131,17 @@
       ;(== `(,a ,b) q)))
   ;'(((_.0 _.1) (num _.1) (sym _.0))))
 
-(test "test 19"
-  (run* (q) (absento 5 q) (absento 5 q))
-  '((_.0 (absento (5 _.0)))))
+;; (test "test 19"
+;;   (run* (q) (absento 5 q) (absento 5 q))
+;;   '((_.0 (absento (5 _.0)))))
 
-(test "test 20"
-  (run* (q) (absento 5 q) (absento 6 q))
-  '((_.0 (absento (5 _.0) (6 _.0)))))
+;; (test "test 20"
+;;   (run* (q) (absento 5 q) (absento 6 q))
+;;   '((_.0 (absento (5 _.0) (6 _.0)))))
 
-(test "test 21"
-  (run* (q) (absento 5 q) (symbolo q))
-  '((_.0 (sym _.0))))
+;; (test "test 21"
+;;   (run* (q) (absento 5 q) (symbolo q))
+;;   '((_.0 (sym _.0))))
 
 (test "test 22"
   (run* (q) (numbero q) (absento 'tag q))
@@ -167,9 +167,9 @@
   (run* (q) (absento 5 q) (== 5 q))
   '())
 
-(test "test 27"
-  (run* (q) (absento 'tag1 q) (absento 'tag2 q))
-  '((_.0 (absento (tag1 _.0) (tag2 _.0)))))
+;; (test "test 27"
+;;   (run* (q) (absento 'tag1 q) (absento 'tag2 q))
+;;   '((_.0 (absento (tag1 _.0) (tag2 _.0)))))
 
 (test "test 28"
   (run* (q) (absento 'tag q) (numbero q))
@@ -203,13 +203,13 @@
       ;(== `(,a ,b) q)))
   ;'(((_.0 _.1) (absento (_.0 _.1) (_.1 _.0)))))
 
-(test "test 32"
-  (run* (q)
-    (fresh (a b)
-      (absento 5 a)
-      (absento 5 b)
-      (== `(,a . ,b) q)))
-  '(((_.0 . _.1) (absento (5 _.0) (5 _.1)))))
+;; (test "test 32"
+;;   (run* (q)
+;;     (fresh (a b)
+;;       (absento 5 a)
+;;       (absento 5 b)
+;;       (== `(,a . ,b) q)))
+;;   '(((_.0 . _.1) (absento (5 _.0) (5 _.1)))))
 
 (test "test 33"
   (run* (q)
@@ -224,9 +224,9 @@
   (run* (q) (absento 'tag q) (symbolo q))
   '((_.0 (=/= ((_.0 tag))) (sym _.0))))
 
-(test "test 35"
-  (run* (q) (absento 5 q) (numbero q))
-  '((_.0 (=/= ((_.0 5))) (num _.0))))
+;; (test "test 35"
+;;   (run* (q) (absento 5 q) (numbero q))
+;;   '((_.0 (=/= ((_.0 5))) (num _.0))))
 
 ;(test "test 36"
   ;(run* (q)
@@ -244,9 +244,9 @@
       ;(symbolo b)))
   ;'(((_.0 _.1) (=/= ((_.0 _.1))) (sym _.0 _.1))))
 
-(test "test 38"
-  (run* (q) (absento '() q))
-  '((_.0 (absento (() _.0)))))
+;; (test "test 38"
+;;   (run* (q) (absento '() q))
+;;   '((_.0 (absento (() _.0)))))
 
 ;(test "test 39"
   ;(run* (q) (absento `(3 4) q))
@@ -438,38 +438,38 @@
   ;(run* (q) (fresh (b) (absento '(3 4) `(,q ,b))))
   ;'((_.0 (absento ((3 4) _.0)))))
 
-(test "test 66"
-  (run* (q) (absento 6 5))
-  '(_.0))
+;; (test "test 66"
+;;   (run* (q) (absento 6 5))
+;;   '(_.0))
 
-(test "test 67"
-  (run* (q)
-    (fresh (a b)
-      (=/= a b)
-      (symbolo a)
-      (numbero b)
-      (== `(,a ,b) q)))
-  '(((_.0 _.1) (num _.1) (sym _.0))))
+;; (test "test 67"
+;;   (run* (q)
+;;     (fresh (a b)
+;;       (=/= a b)
+;;       (symbolo a)
+;;       (numbero b)
+;;       (== `(,a ,b) q)))
+;;   '(((_.0 _.1) (num _.1) (sym _.0))))
 
-(test "test 68"
-  (run* (q)
-    (fresh (a b c d)
-      (=/= `(,a ,b) `(,c ,d))
-      (symbolo a)
-      (numbero c)
-      (symbolo b)
-      (numbero c)
-      (== `(,a ,b ,c ,d) q)))
-  '(((_.0 _.1 _.2 _.3) (num _.2) (sym _.0 _.1))))
+;; (test "test 68"
+;;   (run* (q)
+;;     (fresh (a b c d)
+;;       (=/= `(,a ,b) `(,c ,d))
+;;       (symbolo a)
+;;       (numbero c)
+;;       (symbolo b)
+;;       (numbero c)
+;;       (== `(,a ,b ,c ,d) q)))
+;;   '(((_.0 _.1 _.2 _.3) (num _.2) (sym _.0 _.1))))
 
-(test "test 69"
-  (run* (q)
-    (fresh (a b)
-      (=/= `(,a . 3) `(,b . 3))
-      (symbolo a)
-      (numbero b)
-      (== `(,a ,b) q)))
-   '(((_.0 _.1) (num _.1) (sym _.0))))
+;; (test "test 69"
+;;   (run* (q)
+;;     (fresh (a b)
+;;       (=/= `(,a . 3) `(,b . 3))
+;;       (symbolo a)
+;;       (numbero b)
+;;       (== `(,a ,b) q)))
+;;    '(((_.0 _.1) (num _.1) (sym _.0))))
 
 ;(test "test 70"
   ;(run* (q)

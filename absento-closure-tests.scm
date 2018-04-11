@@ -14,13 +14,13 @@
   (run* (q) (fresh (a d) (absento 'closure q) (== q 'closure)))
   '())
 
-(test "absento 'closure-3a"
-  (run* (q) (fresh (a d) (absento 'closure q) (== `(,a . ,d) q)))
-  '(((_.0 . _.1) (absento (closure _.0) (closure _.1)))))
+;; (test "absento 'closure-3a"
+;;   (run* (q) (fresh (a d) (absento 'closure q) (== `(,a . ,d) q)))
+;;   '(((_.0 . _.1) (absento (closure _.0) (closure _.1)))))
 
-(test "absento 'closure-3b"
-  (run* (q) (fresh (a d) (== `(,a . ,d) q) (absento 'closure q)))  
-  '(((_.0 . _.1) (absento (closure _.0) (closure _.1)))))
+;; (test "absento 'closure-3b"
+;;   (run* (q) (fresh (a d) (== `(,a . ,d) q) (absento 'closure q)))  
+;;   '(((_.0 . _.1) (absento (closure _.0) (closure _.1)))))
 
 (test "absento 'closure-4a"
   (run* (q) (fresh (a d) (absento 'closure q) (== `(,a . ,d) q) (== 'closure a)))

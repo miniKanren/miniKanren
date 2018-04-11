@@ -21,14 +21,14 @@
 (printf "absento-tests\n")
 (load "absento-tests.scm")
 
-(printf "test-infer\n")
-(load "test-infer.scm")
+;; (printf "test-infer\n")
+;; (load "test-infer.scm")
 
 (printf "test-simple-interp\n")
 (load "test-simple-interp.scm")
 
-(printf "test-quines\n")
-(load "test-quines.scm")
+;; (printf "test-quines\n")
+;; (load "test-quines.scm")
 
 (printf "test-numbers\n")
 (load "numbers.scm")
